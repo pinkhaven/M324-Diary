@@ -31,3 +31,5 @@ Setup pre-commit:
 ## Aufgabe 4
 
 Erklären Sie hier, wie Sie das Passwort aus Ihrer lokalen `.env` auf Azure übertragen.
+
+Um ein Secret aus einem Lokalem File in die Cloud zu bekommen, ...
