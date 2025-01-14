@@ -6,10 +6,12 @@ WICHTIG: Dieses Projekt verwendet pre-commit hooks, um die Codequalität zu gew�
 Setup pre-commit:
 (Erklären Sie hier, wie man `pre-commit` installiert.)
 
-- Als erstes klonnt man das repo auf die Locale maschiene um daran arbeiten zu können.
-- Fals installiert, deinstallieren sie die alte versione von flake8:
+- Als Erstes klont man das repo auf die Locale machine um daran arbeiten zu können.
+- Falls installiert, deinstallieren sie die alte version von flake8 und pre-commit:
 
 `pip uninstall flake8`
+
+`pip uninstall pre-commit`
 
 - Um pre-commit reibungslos laufen zu lassen installiert man nun die richtigen, compatible version:
 
