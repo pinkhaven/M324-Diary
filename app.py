@@ -25,6 +25,7 @@ db.init_app(app)
 
 @dataclass
 class Entry:
+    id: int
     content: str
     timestamp: datetime = datetime.now()
 
@@ -58,8 +59,17 @@ def logout():
 def add_entry():
     content = request.form.get('content')
     if content:
-        entry = Entry(content=content)
+        entry_id = len(entries) + 1
+        entry = Entry(id=entry_id, content=content)
         entries.append(entry)
+    return redirect(url_for('index'))
+
+
+@app.route('/delete_entry/<int:entry_id>', methods=['POST'])
+def delete_entry(entry_id):
+    global entries
+    entries = [entry for entry in entries if entry.id != entry_id]
+    flash('Entry deleted successfully!', 'success')
     return redirect(url_for('index'))
 
 
