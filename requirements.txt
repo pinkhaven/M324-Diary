@@ -3,3 +3,4 @@ python-dotenv
 pytest
 gunicorn
 Flask-SQLAlchemy
+psycopg2
