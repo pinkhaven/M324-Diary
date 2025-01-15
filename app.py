@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from dataclasses import dataclass
 import os
 from dotenv import load_dotenv
-
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -11,9 +11,20 @@ load_dotenv()
 PASSWORD = os.getenv("PASSWORD")
 entries = []
 
+# DB-URI config
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://{dbuser}:{dbpass}@{dbhost}/{dbname}".format(
+    dbuser=os.environ["DBUSER"],
+    dbpass=os.environ['DBPASS'],
+    dbhost=os.environ['DBHOST'],
+    dbname=os.environ['DBNAME']
+)
+
+db = SQLAlchemy()
+db.init_app(app)
+
 
 @dataclass
-class Entry():
+class Entry:
     content: str
     timestamp: datetime = datetime.now()
 
