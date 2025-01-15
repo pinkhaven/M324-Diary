@@ -1,10 +1,20 @@
 # LB 324
 
-WICHTIG: Dieses Projekt verwendet pre-commit hooks, um die Codequalität zu gewährleisten. Die Hooks sind so konfiguriert, das bei jedem push der Code getested und formatiert wird.
+
+Github Repo:
+
+https://github.com/pinkhaven/M324-Diary
+
 
 Azure Instanz: (always on: off)
+
 https://m324-g8c9f3chgyhxbyfy.canadacentral-01.azurewebsites.net/
 
+---
+
+WICHTIG: Dieses Projekt verwendet pre-commit hooks, um die Codequalität zu gewährleisten. Die Hooks sind so konfiguriert, das bei jedem push der Code getested und formatiert wird.
+
+---
 
 ## Aufgabe 2
 Setup pre-commit:
@@ -31,11 +41,13 @@ Setup pre-commit:
 
 `pre-commit autoupdate`
 
+---
+
 
 ## Aufgabe 4
 
 Erklären Sie hier, wie Sie das Passwort aus Ihrer lokalen `.env` auf Azure übertragen.
 
-Um das Passwort und andere keys aus einem Lokalem .env file nach azure zu übertragen, geht mann unter den Settings ind das Enviroment Variables tab. 
+Um das Passwort und andere keys aus einem Lokalem .env file nach azure zu übertragen, geht mann unter den Settings ind das Enviroment Variables tab.
 
 Darin kann man dan belibig viele Keys mit den dazugehörigen values eintragen, für die aufgeschaltene App.
