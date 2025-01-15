@@ -19,7 +19,12 @@
     <h2>Entries:</h2>
     <ul>
         {% for entry in entries %}
-        <li>{{ entry.timestamp.strftime('%Y-%m-%d %H:%M:%S') }} - {{ entry.content }}</li>
+        <li>
+            {{ entry.timestamp.strftime('%Y-%m-%d %H:%M:%S') }} - {{ entry.content }}
+            <form method="POST" action="/delete_entry/{{ entry.id }}" style="display:inline;">
+                <button type="submit" style="margin-left:5px">Delete</button>
+            </form>
+        </li>
         {% endfor %}
     </ul>
 
