@@ -13,10 +13,10 @@ entries = []
 
 # DB-URI config
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://{dbuser}:{dbpass}@{dbhost}/{dbname}".format(
-    dbuser=os.environ["DBUSER"],
-    dbpass=os.environ['DBPASS'],
-    dbhost=os.environ['DBHOST'],
-    dbname=os.environ['DBNAME']
+    dbuser=os.environ.get("DBUSER", "default_user"),
+    dbpass=os.environ.get('DBPASS', "default_pass"),
+    dbhost=os.environ.get('DBHOST', "localhost"),
+    dbname=os.environ.get('DBNAME', "default_db")
 )
 
 db = SQLAlchemy()
